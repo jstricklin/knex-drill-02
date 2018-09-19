@@ -18,6 +18,7 @@ router.get("/:id", (request, response, next) => {
 });
 
 router.post("/", (request, response, next) => {
+    console.log(request.body)
     queries.create(request.body).then(coffee => {
         response.status(201).json({coffee});
     }).catch(next);
