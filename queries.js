@@ -15,7 +15,14 @@ module.exports = {
             .then(student => student[0])
     },
     update(id, coffee){
+        return database('coffee')
+            .where('id', id)
+            .update(coffee, '*')
+            .then(coffee => coffee[0])
     },
     delete(id){
+        return database('coffee')
+            .where('id', id)
+            .del()
     }
 };
