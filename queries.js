@@ -2,6 +2,7 @@ const database = require("./database-connection");
 
 module.exports = {
     list(){
+        return database('coffee').orderBy('id')
     },
     read(id){
     },
